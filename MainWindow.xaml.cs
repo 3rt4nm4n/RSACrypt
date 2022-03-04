@@ -53,27 +53,30 @@ namespace RSACrypt
         {                               // relatively prime means that e and z will not have any other common divisor than 1
             Random random = new Random();
             int e;
-        genelabel:
-            e = random.Next(n); //generates positive number that is less than n
-            if (z % e != 0)
-            {
-                return e;
+            for(; ; ) 
+            { 
+                e = random.Next(n); //generates positive number that is less than n
+                if (z % e != 0 && PrimeChk(e))            
+                    return e;            
+                else
+                    continue;
             }
-            else
-                goto genelabel;
-            
+
         }
         public int GenD(int e, int z) //generates d with condition: e*d mod z == 1
         {
             Random random = new Random();
             int d;
-        gendlabel:
+        for(; ; ) 
+            {
 
-            d = random.Next(z, int.MaxValue); //since e*d mod z == 1, d must be greaeter than z so minimum value is z and maximum value is max value of int data type
-            if ((e * d) % z == 1)
-                return d;
-            else
-                goto gendlabel;
+                d = random.Next(z, int.MaxValue); //since e*d mod z == 1, d must be greater than z so minimum value is z and maximum value is max value of int data type
+                if ((e * d) % z == 1)
+                    return d;
+                else
+                    continue;
+
+            }
 
         }
 

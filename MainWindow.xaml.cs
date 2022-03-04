@@ -74,5 +74,19 @@ namespace RSACrypt
             }
 
         }
+
+        private void CalculateNnZButton_Click(object sender, RoutedEventArgs e)
+        {
+            int p = Convert.ToInt32(FirstPrimeNumberTextBox.Text);
+            int q = Convert.ToInt32(SecondPrimeNumberTextBox.Text);
+            NTextBox.Text = GetN(p, q).ToString();
+            ZTextBox.Text = GetZ(p, q).ToString();
+        }
+
+        private void CalculateKeysButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(ETextBox.Text))
+                ETextBox.Text = GenE(Convert.ToInt32(NTextBox.Text), Convert.ToInt32(ZTextBox.Text)).ToString();
+        }
     }
 }

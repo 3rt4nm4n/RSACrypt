@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="RSACrypt" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="C:\Users\nigbu\source\repos\RSACrypt\crypticon.ico">
     <Grid>
-        <TabControl Margin="0,0,-0.4,0">
+        <TabControl x:Name="KeySelectionTabControl" Margin="0,0,-0.4,0">
             <TabItem Header="Key Selection">
                 <Grid>
                     <Label Content="Enter first prime number (p):" Height="27" Margin="10,22,606,343" HorizontalContentAlignment="Right"/>
@@ -18,10 +18,10 @@
                     <TextBox x:Name="ZTextBox" TextWrapping="Wrap" Text="" Margin="618,110,85,255"/>
                     <Label Content="n is:" Height="27" Margin="132,110,606,255" HorizontalContentAlignment="Right"/>
                     <Label Content="z is:" Height="27" Margin="546,110,192,255" HorizontalContentAlignment="Right"/>
-                    <Button Content="Calculate n and z" Margin="400,54,282,312"/>
-                    <Button Content="Calculate keys" Margin="400,170,282,196"/>
-                    <Button Content="Clear" Margin="643,230,85,136"/>
-                    <Button Content="Exit" Margin="643,285,85,81"/>
+                    <Button x:Name="CalculateNnZButton" Content="Calculate n and z" Margin="400,54,282,312" Click="CalculateNnZButton_Click"/>
+                    <Button x:Name="CalculateKeysButton" Content="Calculate keys" Margin="400,170,282,196" Click="CalculateKeysButton_Click"/>
+                    <Button x:Name="ClearButton" Content="Clear" Margin="643,230,85,136"/>
+                    <Button x:Name="ExitButton" Content="Exit" Margin="643,285,85,81"/>
                     <Label Content="Your public key is (e),(n):" Height="27" Margin="10,255,606,110" HorizontalContentAlignment="Right"/>
                     <Label Content="Your private key is (d),(n):" Height="27" Margin="10,314,606,51" HorizontalContentAlignment="Right"/>
 
@@ -36,41 +36,41 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Encryption">
+            <TabItem x:Name="___No_Name_" Header="Encryption">
                 <Grid>
                     <Label Content="Your public key is (e), (n) " Height="27" Margin="40,22,606,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
+                    <TextBox x:Name="PubETextBox" TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
+                    <TextBox x:Name="PlainTextBox" TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
                     <Label Content="Enter plaintext:" Height="27" Margin="88,92,606,273"/>
-                    <Button Content="Copy" Margin="427,22,260,343"/>
-                    <Button Content="Encrypt" Margin="427,151,260,215"/>
-                    <Button Content="Clear" Margin="360,340,368,26"/>
-                    <Button Content="Exit" Margin="519,340,209,26"/>
+                    <Button x:Name="CopyEncButton" Content="Copy" Margin="427,22,260,343"/>
+                    <Button x:Name="EncryptButton" Content="Encrypt" Margin="427,151,260,215"/>
+                    <Button x:Name="ClearEncButton" Content="Clear" Margin="360,340,368,26"/>
+                    <Button x:Name="ExitEncButton" Content="Exit" Margin="519,340,209,26"/>
                     <Label Content="Ciphertext (int):" Height="27" Margin="88,210,606,155"/>
                     <Label Content="," Height="27" Margin="278,22,490,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
+                    <TextBox x:Name="PubNTextBox" TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
+                    <TextBox x:Name="CipherIntTextBox" TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
                     <Label Content="Ciphertext (in hex):" Height="27" Margin="69,277,606,88"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
+                    <TextBox x:Name="CipherHexTextBox" TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Decryption">
                 <Grid>
-                    <Label Content="Your public key is (e), (n) " Height="27" Margin="40,22,606,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
+                    <Label Content="Your private key is (d), (n) " Height="27" Margin="40,22,606,343"/>
+                    <TextBox x:Name="PrivDTextBox" TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
+                    <TextBox x:Name="EncryptedTextBox" TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
                     <Label Content="Enter ciphertext:" Height="27" Margin="88,92,606,273"/>
-                    <Button Content="Copy" Margin="427,22,260,343"/>
-                    <Button Content="Encrypt" Margin="427,151,260,215"/>
-                    <Button Content="Clear" Margin="360,340,368,26"/>
-                    <Button Content="Exit" Margin="519,340,209,26"/>
+                    <Button x:Name="CopyDecButton" Content="Copy" Margin="427,22,260,343"/>
+                    <Button Content="Decrypt" Margin="427,151,260,215"/>
+                    <Button x:Name="ClearDecButton" Content="Clear" Margin="360,340,368,26"/>
+                    <Button x:Name="ExitDecButton" Content="Exit" Margin="519,340,209,26"/>
                     <Label Content="Ciphertext (int):" Height="27" Margin="88,210,606,155"/>
                     <Label Content="," Height="27" Margin="278,22,490,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
+                    <TextBox x:Name="PrivNTextBox" TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
+                    <TextBox x:Name="CipherIntDecTextBox" TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
                     <Label Content="Ciphertext (in hex):" Height="27" Margin="69,277,606,88"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
+                    <TextBox x:Name="CipherHexDecTextBox" TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
 
                 </Grid>
             </TabItem>

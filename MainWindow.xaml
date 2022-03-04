@@ -11,11 +11,11 @@
             <TabItem Header="Key Selection">
                 <Grid>
                     <Label Content="Enter first prime number (p):" Height="27" Margin="10,22,606,343" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Name="FirstPrimeNumberTextBox" TextWrapping="Wrap" Text="" Margin="228,22,460,343"/>
+                    <TextBox x:Name="FirstPrimeNumberTextBox" TextWrapping="NoWrap" Text="" Margin="228,22,460,343"/>
                     <Label Content="Enter second prime number (q):" Height="27" Margin="400,22,192,343" HorizontalContentAlignment="Left"/>
-                    <TextBox x:Name="SecondPrimeNumberTextBox" TextWrapping="Wrap" Text="" Margin="618,22,85,343"/>
-                    <TextBox x:Name="NTextBox" TextWrapping="Wrap" Text="" Margin="228,110,460,255"/>
-                    <TextBox x:Name="ZTextBox" TextWrapping="Wrap" Text="" Margin="618,110,85,255"/>
+                    <TextBox x:Name="SecondPrimeNumberTextBox" TextWrapping="NoWrap" Text="" Margin="618,22,85,343"/>
+                    <TextBox x:Name="NTextBox" TextWrapping="NoWrap" Text="" Margin="228,110,460,255"/>
+                    <TextBox x:Name="ZTextBox" TextWrapping="NoWrap" Text="" Margin="618,110,85,255"/>
                     <Label Content="n is:" Height="27" Margin="132,110,606,255" HorizontalContentAlignment="Right"/>
                     <Label Content="z is:" Height="27" Margin="546,110,192,255" HorizontalContentAlignment="Right"/>
                     <Button x:Name="CalculateNnZButton" Content="Calculate n and z" Margin="400,54,282,312" Click="CalculateNnZButton_Click"/>
@@ -25,22 +25,22 @@
                     <Label Content="Your public key is (e),(n):" Height="27" Margin="10,255,606,110" HorizontalContentAlignment="Right"/>
                     <Label Content="Your private key is (d),(n):" Height="27" Margin="10,314,606,51" HorizontalContentAlignment="Right"/>
 
-                    <TextBox x:Name="PublicETextbox" TextWrapping="Wrap" Text="" Margin="228,254,520,111" IsReadOnly="True"/>
-                    <TextBox x:Name="PublicNTextbox" TextWrapping="Wrap" Text="" Margin="288,254,460,111" IsReadOnly="True"/>
+                    <TextBox x:Name="PublicETextbox" TextWrapping="NoWrap" Margin="228,254,520,111" IsReadOnly="True"/>
+                    <TextBox x:Name="PublicNTextbox" TextWrapping="NoWrap" Text="" Margin="288,254,460,111" IsReadOnly="True"/>
                     <Label Content="," Height="27" Margin="268,255,500,110"/>
-                    <TextBox x:Name="PrivateDTextbox" TextWrapping="Wrap" Text="" Margin="228,313,520,52" IsReadOnly="True"/>
-                    <TextBox x:Name="PrivateNTextbox" TextWrapping="Wrap" Text="" Margin="288,313,460,52" IsReadOnly="True"/>
+                    <TextBox x:Name="PrivateDTextbox" TextWrapping="NoWrap" Text="" Margin="228,313,520,52" IsReadOnly="True"/>
+                    <TextBox x:Name="PrivateNTextbox" TextWrapping="NoWrap" Text="" Margin="288,313,460,52" IsReadOnly="True"/>
                     <Label Content="," Height="27" Margin="268,314,500,51"/>
                     <Label Content="Enter e (e&lt;n, prime to z):" Height="27" Margin="10,169,606,196" HorizontalContentAlignment="Right"/>
-                    <TextBox x:Name="ETextBox" TextWrapping="Wrap" Text="" Margin="228,169,460,196"/>
+                    <TextBox x:Name="ETextBox" TextWrapping="NoWrap" Text="" Margin="228,169,460,196"/>
 
                 </Grid>
             </TabItem>
             <TabItem x:Name="___No_Name_" Header="Encryption">
                 <Grid>
                     <Label Content="Your public key is (e), (n) " Height="27" Margin="40,22,606,343"/>
-                    <TextBox x:Name="PubETextBox" TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
-                    <TextBox x:Name="PlainTextBox" TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
+                    <TextBox x:Name="PubETextBox" TextWrapping="NoWrap" Text="" Margin="228,22,510,343"/>
+                    <TextBox x:Name="PlainTextBox" TextWrapping="NoWrap" Text="" Margin="228,74,71,255"/>
                     <Label Content="Enter plaintext:" Height="27" Margin="88,92,606,273"/>
                     <Button x:Name="CopyEncButton" Content="Copy" Margin="427,22,260,343"/>
                     <Button x:Name="EncryptButton" Content="Encrypt" Margin="427,151,260,215"/>
@@ -48,18 +48,18 @@
                     <Button x:Name="ExitEncButton" Content="Exit" Margin="519,340,209,26"/>
                     <Label Content="Ciphertext (int):" Height="27" Margin="88,210,606,155"/>
                     <Label Content="," Height="27" Margin="278,22,490,343"/>
-                    <TextBox x:Name="PubNTextBox" TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
-                    <TextBox x:Name="CipherIntTextBox" TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
+                    <TextBox x:Name="PubNTextBox" TextWrapping="NoWrap" Text="" Margin="298,22,440,343"/>
+                    <TextBox x:Name="CipherIntTextBox" TextWrapping="NoWrap" Text="" Margin="228,191,71,138"/>
                     <Label Content="Ciphertext (in hex):" Height="27" Margin="69,277,606,88"/>
-                    <TextBox x:Name="CipherHexTextBox" TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
+                    <TextBox x:Name="CipherHexTextBox" TextWrapping="NoWrap" Text="" Margin="228,259,71,70"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Decryption">
                 <Grid>
                     <Label Content="Your private key is (d), (n) " Height="27" Margin="40,22,606,343"/>
-                    <TextBox x:Name="PrivDTextBox" TextWrapping="Wrap" Text="" Margin="228,22,510,343"/>
-                    <TextBox x:Name="EncryptedTextBox" TextWrapping="Wrap" Text="" Margin="228,74,71,255"/>
+                    <TextBox x:Name="PrivDTextBox" TextWrapping="NoWrap" Text="" Margin="228,22,510,343"/>
+                    <TextBox x:Name="EncryptedTextBox" TextWrapping="NoWrap" Text="" Margin="228,74,71,255"/>
                     <Label Content="Enter ciphertext:" Height="27" Margin="88,92,606,273"/>
                     <Button x:Name="CopyDecButton" Content="Copy" Margin="427,22,260,343"/>
                     <Button Content="Decrypt" Margin="427,151,260,215"/>
@@ -67,10 +67,10 @@
                     <Button x:Name="ExitDecButton" Content="Exit" Margin="519,340,209,26"/>
                     <Label Content="Ciphertext (int):" Height="27" Margin="88,210,606,155"/>
                     <Label Content="," Height="27" Margin="278,22,490,343"/>
-                    <TextBox x:Name="PrivNTextBox" TextWrapping="Wrap" Text="" Margin="298,22,440,343"/>
-                    <TextBox x:Name="CipherIntDecTextBox" TextWrapping="Wrap" Text="" Margin="228,191,71,138"/>
+                    <TextBox x:Name="PrivNTextBox" TextWrapping="NoWrap" Text="" Margin="298,22,440,343"/>
+                    <TextBox x:Name="CipherIntDecTextBox" TextWrapping="NoWrap" Text="" Margin="228,191,71,138"/>
                     <Label Content="Ciphertext (in hex):" Height="27" Margin="69,277,606,88"/>
-                    <TextBox x:Name="CipherHexDecTextBox" TextWrapping="Wrap" Text="" Margin="228,259,71,70"/>
+                    <TextBox x:Name="CipherHexDecTextBox" TextWrapping="NoWrap" Text="" Margin="228,259,71,70"/>
 
                 </Grid>
             </TabItem>

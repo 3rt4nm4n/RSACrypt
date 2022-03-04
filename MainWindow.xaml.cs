@@ -49,8 +49,8 @@ namespace RSACrypt
             int z = (p - 1) * (q - 1);
             return z;
         }
-        public int GenE(int n, int z) //generates e with conditions: e < n, prime to z
-        {
+        public int GenE(int n, int z) //generates e with conditions: e < n, prime to z 
+        {                               // relatively prime means that e and z will not have any other common divisor than 1
             Random random = new Random();
             int e;
         genelabel:

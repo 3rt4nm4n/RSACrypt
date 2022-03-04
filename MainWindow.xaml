@@ -11,11 +11,11 @@
             <TabItem Header="Key Selection">
                 <Grid>
                     <Label Content="Enter first prime number (p):" Height="27" Margin="10,22,606,343" HorizontalContentAlignment="Right"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,22,460,343"/>
-                    <Label Content="Enter second prime number (q):" Height="27" Margin="400,22,192,343" HorizontalContentAlignment="Right"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="618,22,85,343"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,110,460,255"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="618,110,85,255"/>
+                    <TextBox x:Name="FirstPrimeNumberTextBox" TextWrapping="Wrap" Text="" Margin="228,22,460,343"/>
+                    <Label Content="Enter second prime number (q):" Height="27" Margin="400,22,192,343" HorizontalContentAlignment="Left"/>
+                    <TextBox x:Name="SecondPrimeNumberTextBox" TextWrapping="Wrap" Text="" Margin="618,22,85,343"/>
+                    <TextBox x:Name="NTextBox" TextWrapping="Wrap" Text="" Margin="228,110,460,255"/>
+                    <TextBox x:Name="ZTextBox" TextWrapping="Wrap" Text="" Margin="618,110,85,255"/>
                     <Label Content="n is:" Height="27" Margin="132,110,606,255" HorizontalContentAlignment="Right"/>
                     <Label Content="z is:" Height="27" Margin="546,110,192,255" HorizontalContentAlignment="Right"/>
                     <Button Content="Calculate n and z" Margin="400,54,282,312"/>
@@ -23,16 +23,16 @@
                     <Button Content="Clear" Margin="643,230,85,136"/>
                     <Button Content="Exit" Margin="643,285,85,81"/>
                     <Label Content="Your public key is (e),(n):" Height="27" Margin="10,255,606,110" HorizontalContentAlignment="Right"/>
-                    <Label Content="Your public key is (d),(n):" Height="27" Margin="10,314,606,51" HorizontalContentAlignment="Right"/>
+                    <Label Content="Your private key is (d),(n):" Height="27" Margin="10,314,606,51" HorizontalContentAlignment="Right"/>
 
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,254,520,111"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="288,254,460,111"/>
+                    <TextBox x:Name="PublicETextbox" TextWrapping="Wrap" Text="" Margin="228,254,520,111" IsReadOnly="True"/>
+                    <TextBox x:Name="PublicNTextbox" TextWrapping="Wrap" Text="" Margin="288,254,460,111" IsReadOnly="True"/>
                     <Label Content="," Height="27" Margin="268,255,500,110"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,313,520,52"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="288,313,460,52"/>
+                    <TextBox x:Name="PrivateDTextbox" TextWrapping="Wrap" Text="" Margin="228,313,520,52" IsReadOnly="True"/>
+                    <TextBox x:Name="PrivateNTextbox" TextWrapping="Wrap" Text="" Margin="288,313,460,52" IsReadOnly="True"/>
                     <Label Content="," Height="27" Margin="268,314,500,51"/>
                     <Label Content="Enter e (e&lt;n, prime to z):" Height="27" Margin="10,169,606,196" HorizontalContentAlignment="Right"/>
-                    <TextBox TextWrapping="Wrap" Text="" Margin="228,169,460,196"/>
+                    <TextBox x:Name="ETextBox" TextWrapping="Wrap" Text="" Margin="228,169,460,196"/>
 
                 </Grid>
             </TabItem>

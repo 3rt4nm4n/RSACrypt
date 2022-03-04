@@ -62,11 +62,16 @@ namespace RSACrypt
                 }
             }
         }
-        public int GenD(int e, int z)
+        public int GenD(int e, int z) //generates d with condition: e*d mod z == 1
         {
             Random random = new Random();
-            int d = random.Next(z, int.MaxValue); //since e*d mod z == 1, d must be greaeter than z so minimum value is z and maximum value is max value of int data type
-
+            int d; 
+            while (true)
+            {
+                d = random.Next(z, int.MaxValue); //since e*d mod z == 1, d must be greaeter than z so minimum value is z and maximum value is max value of int data type
+                if ((e * d) % z == 1)
+                    return d;
+            }
 
         }
     }

@@ -20,6 +20,7 @@ namespace RSACrypt
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -108,7 +109,7 @@ namespace RSACrypt
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void CopyEncButton_Click(object sender, RoutedEventArgs e)
@@ -124,5 +125,42 @@ namespace RSACrypt
             sb.Append(PrivDTextBox.Text + "," + PrivNTextBox.Text);
             Clipboard.SetDataObject(sb.ToString());
         }
+
+        private void EncryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string origascii = "";
+            string hexasc = "";
+            string str = PlainTextBox.Text;
+            byte[] bytes = Encoding.ASCII.GetBytes(str);
+            
+            foreach (byte element in bytes)//Converts to ASCII
+            {
+                int c = 1;
+                for ( int i = 0; i < Convert.ToInt32(PubETextBox.Text); i++)
+                {
+                    c = (c * element) % Convert.ToInt32(PubNTextBox.Text);
+               
+                }
+                c = c % Convert.ToInt32(PubNTextBox.Text);
+                hexasc += c.ToString("X4"); //We used the second hint
+                origascii += c+" ";
+            }
+            //get encrypted ascii using keys
+            CipherIntTextBox.Text = origascii;
+            CipherHexTextBox.Text = hexasc;
+        }
+
+        private void DecryptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string enctxt = EncryptedTextBox.Text;
+            string dectxt = "";
+        }
+
+        private void ClearEncButton_Click(object sender, RoutedEventArgs e)
+        {
+            CipherIntTextBox.Text = CipherHexTextBox.Text = PlainTextBox.Text = "";
+        }
+
+        
     }
 }

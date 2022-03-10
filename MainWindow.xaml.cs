@@ -98,5 +98,24 @@ namespace RSACrypt
             PrivateDTextbox.Text = PrivDTextBox.Text = GenD(Convert.ToInt32(ETextBox.Text), Convert.ToInt32(ZTextBox.Text)).ToString();
 
         }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            FirstPrimeNumberTextBox.Text = SecondPrimeNumberTextBox.Text = "";
+            NTextBox.Text = ZTextBox.Text = ETextBox.Text = "";
+            PublicETextbox.Text = PublicNTextbox.Text = PrivateDTextbox.Text = PrivateNTextbox.Text = PubNTextBox.Text = PrivDTextBox.Text = PrivDTextBox.Text = PubETextBox.Text = PrivNTextBox.Text = "";
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CopyEncButton_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(PubETextBox.Text + "," + PubNTextBox.Text);
+            Clipboard.SetDataObject(sb.ToString());
+        }
     }
 }

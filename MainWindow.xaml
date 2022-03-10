@@ -61,7 +61,7 @@
                     <TextBox x:Name="PrivDTextBox" TextWrapping="NoWrap" Text="" Margin="228,22,510,343"/>
                     <TextBox x:Name="EncryptedTextBox" TextWrapping="NoWrap" Text="" Margin="228,74,71,255"/>
                     <Label Content="Enter ciphertext:" Height="27" Margin="74,92,606,273"/>
-                    <Button x:Name="CopyDecButton" Content="Copy" Margin="427,22,260,343"/>
+                    <Button x:Name="CopyDecButton" Content="Copy" Margin="427,22,260,343" Click="CopyDecButton_Click"/>
                     <Button Content="Decrypt" Margin="427,151,260,215"/>
                     <Button x:Name="ClearDecButton" Content="Clear" Margin="360,340,368,26"/>
                     <Button x:Name="ExitDecButton" Content="Exit" Margin="519,340,209,26" />

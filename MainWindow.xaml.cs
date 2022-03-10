@@ -117,5 +117,12 @@ namespace RSACrypt
             sb.Append(PubETextBox.Text + "," + PubNTextBox.Text);
             Clipboard.SetDataObject(sb.ToString());
         }
+
+        private void CopyDecButton_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(PrivDTextBox.Text + "," + PrivNTextBox.Text);
+            Clipboard.SetDataObject(sb.ToString());
+        }
     }
 }

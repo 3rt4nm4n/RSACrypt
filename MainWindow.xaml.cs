@@ -125,55 +125,5 @@ namespace RSACrypt
             sb.Append(PlainDecTextBox.Text);
             Clipboard.SetDataObject(sb.ToString());
         }
-
-        private void EncryptButton_Click(object sender, RoutedEventArgs e)
-        {
-            string origascii = "";
-            string hexasc = "";
-            string str = PlainTextBox.Text;
-            byte[] bytes = Encoding.ASCII.GetBytes(str);
-            
-            foreach (byte element in bytes)//Converts to ASCII
-            {
-                int c = 1;
-                for ( int i = 0; i < Convert.ToInt32(PubETextBox.Text); i++)
-                {
-                    c = (c * element) % Convert.ToInt32(PubNTextBox.Text);
-               
-                }
-                c = c % Convert.ToInt32(PubNTextBox.Text);
-                hexasc += c.ToString("X4")+" "; //We used the second hint
-                origascii += c+" ";
-            }
-            //get encrypted ascii using keys
-            CipherIntTextBox.Text = origascii;
-            CipherHexTextBox.Text = hexasc;
-        }
-        //0390 02B9 0247 0429 0105 0273 0035 02BF 0220 02B9 039C 03EB 02B9 
-        private void DecryptButton_Click(object sender, RoutedEventArgs e)
-        {
-            string str="";
-            string enctxt = EncryptedTextBox.Text;
-            enctxt = enctxt.Replace(" ", string.Empty); //removes whitespaces in the string
-            var bytes = Encoding.ASCII.GetBytes(enctxt);
-            foreach(byte element in bytes)
-            {
-                for (int i = 0; i < Convert.ToInt32(PrivDTextBox.Text); i++)
-                {
-
-                }
-            }
-            PlainIntTextBox.Text = str;
-        }
-
-        private void ClearEncButton_Click(object sender, RoutedEventArgs e)
-        {
-            CipherIntTextBox.Text = CipherHexTextBox.Text = PlainTextBox.Text = "";
-        }
-
-        private void ClearDecButton_Click(object sender, RoutedEventArgs e)
-        {
-            EncryptedTextBox.Text = PlainDecTextBox.Text = PlainIntTextBox.Text = string.Empty;
-        }
     }
 }

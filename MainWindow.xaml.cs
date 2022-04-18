@@ -71,7 +71,7 @@ namespace RSACrypt
         for(; ; ) 
             {
 
-                d = random.Next(z, int.MaxValue); //since e*d mod z == 1, d must be greater than z so minimum value is z and maximum value is max value of int data type
+                d = random.Next(z, 1000); //since e*d mod z == 1, d must be greater than z so minimum value is z and maximum value is max value of int data type
                 if ((e * d) % z == 1)
                     return d;
                 else
